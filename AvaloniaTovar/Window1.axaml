@@ -1,0 +1,23 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaTovar.Window1"
+        Title="Window1">
+	<Grid ColumnDefinitions="250,*,240" RowDefinitions="50,*,50" >
+		<Border Grid.Column="1" Grid.Row="1" Background="Purple" Width="275" Height="315" CornerRadius="20">
+			<Border Background="Lavender" Width="260" Height="300" CornerRadius="20">
+				<StackPanel>
+					<Panel>
+					<TextBlock Text="Список добавленного" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="0,5,0,0"/>
+					<Button HorizontalAlignment="Right" Background="Red"  Margin="0,-20,-10,0" Click="Button_Click">
+						<ContentControl Content="X" FontWeight="ExtraBold" Width="10" Height="15"/>
+					</Button>					
+					</Panel>
+					<ListBox Name="ProductListBox" Background="Lavender" CornerRadius="20"/>	
+				</StackPanel>
+			</Border>
+		</Border>
+	</Grid>
+</Window>
