@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using static AvaloniaTovar.MainWindow;
 
@@ -12,20 +14,14 @@ public partial class Window1 : Window
     {
         InitializeComponent();
     }
-    public ObservableCollection<Product> Products { get; set; }
 
-    public Window1(ObservableCollection<Product> products)
+    public Window1(List<Product> products)
     {
         InitializeComponent();
-        if (products == null)
-        {
-            products = new ObservableCollection<Product>();
-        }
-
         ProductListBox.ItemsSource = products;
     }
 
-    private void Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    private void Button_Click(object? sender, RoutedEventArgs e)
     {
         Close();
     }
