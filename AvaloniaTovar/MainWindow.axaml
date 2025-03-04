@@ -4,8 +4,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AvaloniaTovar.MainWindow"
-        Title="AvaloniaTovar">
-	<Grid ColumnDefinitions="250,*,240" RowDefinitions="50,*,50" >
+        Title="AvaloniaTovar"
+		Height="350"
+		Width="300"
+		MinHeight="350"
+		MinWidth="300"
+		>
+	<Grid ColumnDefinitions="*,300,*" RowDefinitions="*,350,*" >
 		<Border Grid.Column="1" Grid.Row="1" Background="DimGray" Width="275" Height="315" CornerRadius="20">
 		    <Border Background="Bisque" Width="260" Height="300" CornerRadius="20">
 				<StackPanel>

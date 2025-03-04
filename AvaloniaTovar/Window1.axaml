@@ -4,8 +4,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AvaloniaTovar.Window1"
-        Title="Window1">
-	<Grid ColumnDefinitions="250,*,240" RowDefinitions="50,*,50" >
+        Title="Window1"
+		Height="350"
+		Width="300"
+		MinHeight="350"
+		MinWidth="300">
+	<Grid ColumnDefinitions="*,300,*" RowDefinitions="*,350,*" >
 		<Border Grid.Column="1" Grid.Row="1" Background="Purple" Width="275" Height="315" CornerRadius="20">
 			<Border Background="Lavender" Width="260" Height="300" CornerRadius="20">
 				<StackPanel>
@@ -13,9 +17,9 @@
 					<TextBlock Text="Список добавленного" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="0,5,0,0"/>
 					<Button HorizontalAlignment="Right" Background="Red"  Margin="0,-20,-10,0" Click="Button_Click">
 						<ContentControl Content="X" FontWeight="ExtraBold" Width="10" Height="15"/>
-					</Button>					
+					</Button>
 					</Panel>
-					<ListBox Name="ProductListBox" Background="Lavender" CornerRadius="20"/>	
+					<ListBox Name="ProductListBox" Background="Lavender" CornerRadius="20" SelectionMode="Single"/>	
 				</StackPanel>
 			</Border>
 		</Border>

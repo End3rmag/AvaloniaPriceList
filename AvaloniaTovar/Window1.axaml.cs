@@ -9,16 +9,32 @@ using static AvaloniaTovar.MainWindow;
 namespace AvaloniaTovar;
 
 public partial class Window1 : Window
+
 {
     public Window1() 
     {
         InitializeComponent();
     }
 
+    private List<Product> _products;
+
+   
     public Window1(List<Product> products)
     {
         InitializeComponent();
-        ProductListBox.ItemsSource = products;
+        _products = products;
+        ProductListBox.ItemsSource = _products;
+        ProductListBox.SelectionChanged += ProductListBox_SelectionChanged;
+    }
+
+    private void ProductListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (ProductListBox.SelectedItem is Product selectedProduct)
+        {
+           new Window2(selectedProduct, _products).Show();
+            Close();
+        }
+       
     }
 
     private void Button_Click(object? sender, RoutedEventArgs e)
