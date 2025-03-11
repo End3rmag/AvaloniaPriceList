@@ -1,3 +1,4 @@
+
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
@@ -8,7 +9,7 @@ namespace AvaloniaTovar;
 
 public partial class Window2 : Window
 {
-    public Product Product {get; private set;}
+    public Product Product { get; private set; }
     public List<Product> products;
     public Window2()
     {
@@ -32,7 +33,7 @@ public partial class Window2 : Window
         Product.Price = decimal.Parse(Price.Text);
         new Window1(products).Show();
         Close();
-        
+
     }
 
     private void Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -40,5 +41,5 @@ public partial class Window2 : Window
         Close();
     }
 
-  
+
 }

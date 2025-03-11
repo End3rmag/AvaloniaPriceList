@@ -14,12 +14,23 @@
 			<Border Background="Lavender" Width="260" Height="300" CornerRadius="20">
 				<StackPanel>
 					<Panel>
-					<TextBlock Text="Список добавленного" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="0,5,0,0"/>
-					<Button HorizontalAlignment="Right" Background="Red"  Margin="0,-20,-10,0" Click="Button_Click">
-						<ContentControl Content="X" FontWeight="ExtraBold" Width="10" Height="15"/>
-					</Button>
+						<TextBlock Text="Список добавленного" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="0,5,0,0"/>
+						<Button HorizontalAlignment="Right" Background="Red"  Margin="0,-20,-10,0" Click="Button_Click">
+							<ContentControl Content="X" FontWeight="ExtraBold" Width="10" Height="15"/>
+						</Button>
 					</Panel>
-					<ListBox Name="ProductListBox" Background="Lavender" CornerRadius="20" SelectionMode="Single"/>	
+					<ListBox Name="ProductListBox" Background="Lavender" CornerRadius="20" Width="260" Height="270" SelectionMode="Single">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel Orientation="Horizontal" >
+									<TextBlock Text="{Binding}"/>
+									<Button Click="Del_Click" Margin="10,-5,0,0" Background="Transparent">
+										<Image Source="avares://AvaloniaTovar/screen/free-icon-trash-can-542724.png" Width="15" Height="15"></Image>
+									</Button>
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
 				</StackPanel>
 			</Border>
 		</Border>

@@ -20,13 +20,14 @@ namespace AvaloniaTovar
             var name = TovarName.Text;
             var quantityText = quantityTovar.Text;
             var priceText = TovarPrice.Text;
-
             if (int.TryParse(quantityText, out var quantity) && decimal.TryParse(priceText, out var price))
-            {
-                _productManager.AddProduct(name, quantity, price);
-                InitializeComponent();
-            }
+        {
+            _productManager.AddProduct(name, quantity, price);
+            TovarName.Text = string.Empty;
+            quantityTovar.Text = string.Empty;
+            TovarPrice.Text = string.Empty;
         }
+}
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             new Window1(_productManager.Products).Show();

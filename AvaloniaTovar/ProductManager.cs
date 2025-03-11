@@ -17,12 +17,15 @@ namespace AvaloniaTovar
 
         public void AddProduct(string name, int quantity, decimal price)
         {
-            Products.Add(new Product
+            Products.Add(new Product { Name = name, Quantity = quantity, Price = price });
+        }
+
+        public void RemoveProduct(Product product)
+        {
+            if (product != null && Products.Contains(product))
             {
-                Name = name,
-                Quantity = quantity,
-                Price = price
-            });
+                Products.Remove(product);
+            }
         }
     }
 }

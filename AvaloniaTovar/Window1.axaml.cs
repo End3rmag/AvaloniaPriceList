@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Avalonia;
@@ -11,14 +12,14 @@ namespace AvaloniaTovar;
 public partial class Window1 : Window
 
 {
-    public Window1() 
+    public Window1()
     {
         InitializeComponent();
     }
 
     private List<Product> _products;
 
-   
+
     public Window1(List<Product> products)
     {
         InitializeComponent();
@@ -31,14 +32,29 @@ public partial class Window1 : Window
     {
         if (ProductListBox.SelectedItem is Product selectedProduct)
         {
-           new Window2(selectedProduct, _products).Show();
+            new Window2(selectedProduct, _products).Show();
             Close();
         }
-       
+
     }
 
     private void Button_Click(object? sender, RoutedEventArgs e)
     {
         Close();
+    }
+
+    private void Del_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (sender is Button button)
+        {   
+            Product productToRemove = (Product)button.DataContext;
+
+            if (_products.Contains(productToRemove))
+            {
+                _products.Remove(productToRemove);
+                ProductListBox.ItemsSource = null;
+                ProductListBox.ItemsSource = _products;
+            }
+        }
     }
 }
