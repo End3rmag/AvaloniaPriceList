@@ -4,22 +4,18 @@ using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
-using static AvaloniaTovar.MainWindow;
+
 
 namespace AvaloniaTovar;
 
 public partial class Window1 : Window
-
 {
+    private List<Product> _products;
+
     public Window1()
     {
         InitializeComponent();
     }
-
-    private List<Product> _products;
-
-
     public Window1(List<Product> products)
     {
         InitializeComponent();
@@ -35,7 +31,6 @@ public partial class Window1 : Window
             new Window2(selectedProduct, _products).Show();
             Close();
         }
-
     }
 
     private void Button_Click(object? sender, RoutedEventArgs e)
@@ -46,8 +41,14 @@ public partial class Window1 : Window
     private void Del_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         if (sender is Button button)
-        {   
+        {
+
             Product productToRemove = (Product)button.DataContext;
+
+            if (ProductManager.Obnovlenie.Products.Count == 0) 
+            {
+                ProductListBox.ItemsSource = null;
+            }
 
             if (_products.Contains(productToRemove))
             {
@@ -56,5 +57,11 @@ public partial class Window1 : Window
                 ProductListBox.ItemsSource = _products;
             }
         }
+    }
+
+    private void BackButton_Click(object? sender, RoutedEventArgs e)
+    {
+        new MainWindow().Show();
+        Close();
     }
 }

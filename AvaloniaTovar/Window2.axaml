@@ -13,10 +13,12 @@
 		<Border Grid.Column="1" Grid.Row="1" Background="DimGray" Width="275" Height="315" CornerRadius="20">
 			<Border Background="Bisque" Width="260" Height="300" CornerRadius="20">
 				<StackPanel>
-					<Button HorizontalAlignment="Right" Background="Red"  Margin="0,-10,-10,0" Click="Button_Click">
-						<ContentControl Content="X" FontWeight="ExtraBold" Width="10" Height="15"/>
-					</Button>
-					<TextBlock VerticalAlignment="Top" Text="Редактрование товара" FontWeight="Bold" FontSize="17" Margin="0,0,0,0" HorizontalAlignment="Center"/>
+					<Panel>
+						<Button CornerRadius="20" Width="25" Height="25" HorizontalAlignment="Right" Background="PeachPuff" Margin="0,-23,-6,0" Click="Button_Click">
+							<Image Source="avares://AvaloniaTovar/screen/free-icon-close-3945547.png" Width="15" Height="15"></Image>
+						</Button>
+					<TextBlock VerticalAlignment="Top" Text="Редактрование товара" FontWeight="Bold" FontSize="17" Margin="0,15,0,0" HorizontalAlignment="Center"/>
+					</Panel>
 					<TextBlock Text="Наименование продукта" FontWeight="Bold" Margin="16,20,0,0"/>
 					<TextBox Name="Name" Width="220" Margin="0,5,0,0" Watermark="Twix"/>
 					<TextBlock Text="Колличество" FontWeight="Bold" Margin="16,10,0,0"/>

@@ -15,16 +15,19 @@
 				<StackPanel>
 					<Panel>
 						<TextBlock Text="Список добавленного" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="0,5,0,0"/>
-						<Button HorizontalAlignment="Right" Background="Red"  Margin="0,-20,-10,0" Click="Button_Click">
-							<ContentControl Content="X" FontWeight="ExtraBold" Width="10" Height="15"/>
+						<Button CornerRadius="20" Width="25" Height="25" HorizontalAlignment="Right" Background="PeachPuff" Margin="0,-15,-6,0" Click="Button_Click">
+							<Image Source="avares://AvaloniaTovar/screen/free-icon-close-3945547.png" Width="15" Height="15"></Image>
+						</Button>
+						<Button CornerRadius="20" Width="25" Height="25" HorizontalAlignment="Left" Background="PeachPuff"  Margin="-6,-15,0,0" Click="BackButton_Click">
+							<Image Source="avares://AvaloniaTovar/screen/free-icon-undo-4147237.png" Width="15" Height="15"></Image>
 						</Button>
 					</Panel>
 					<ListBox Name="ProductListBox" Background="Lavender" CornerRadius="20" Width="260" Height="270" SelectionMode="Single">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
-								<StackPanel Orientation="Horizontal" >
+								<StackPanel Orientation="Vertical" >
 									<TextBlock Text="{Binding}"/>
-									<Button Click="Del_Click" Margin="10,-5,0,0" Background="Transparent">
+									<Button Click="Del_Click" Margin="-5,5,5,0" Background="Transparent" HorizontalAlignment="Left">
 										<Image Source="avares://AvaloniaTovar/screen/free-icon-trash-can-542724.png" Width="15" Height="15"></Image>
 									</Button>
 								</StackPanel>

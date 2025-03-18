@@ -10,17 +10,17 @@ namespace AvaloniaTovar;
 public partial class Window2 : Window
 {
     public Product Product { get; private set; }
-    public List<Product> products;
+    private List<Product> _products;
+
     public Window2()
     {
         InitializeComponent();
     }
-
     public Window2(Product product, List<Product> products)
     {
         InitializeComponent();
         Product = product;
-        this.products = products;
+        _products = products;
         Name.Text = product.Name;
         Quantity.Text = product.Quantity.ToString();
         Price.Text = product.Price.ToString("F2");
@@ -31,15 +31,13 @@ public partial class Window2 : Window
         Product.Name = Name.Text;
         Product.Quantity = int.Parse(Quantity.Text);
         Product.Price = decimal.Parse(Price.Text);
-        new Window1(products).Show();
+        new Window1(_products).Show();
         Close();
-
     }
 
     private void Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
+        new Window1(_products).Show();
         Close();
     }
-
-
 }

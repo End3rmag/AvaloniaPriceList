@@ -8,10 +8,16 @@
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="screen\free-icon-close-3945547.png" />
+    <None Remove="screen\free-icon-cross-6711656.png" />
     <None Remove="screen\free-icon-trash-can-542724.png" />
+    <None Remove="screen\free-icon-undo-4147237.png" />
   </ItemGroup>
   <ItemGroup>
+    <AvaloniaResource Include="screen\free-icon-close-3945547.png" />
+    <AvaloniaResource Include="screen\free-icon-cross-6711656.png" />
     <AvaloniaResource Include="screen\free-icon-trash-can-542724.png" />
+    <AvaloniaResource Include="screen\free-icon-undo-4147237.png" />
   </ItemGroup>
 
   <ItemGroup>
